@@ -5,7 +5,7 @@ import sidereal
 import argparse, subprocess, os, time, re, math
 from astropy.io import fits
 from astropy.time import Time
-from pyraf.iraf import immatch
+#from pyraf.iraf import immatch
 
 client_path = '/Users/jake/Desktop/sextraction/astrometry.net/net/client/client.py'
 
@@ -17,7 +17,7 @@ def get_args():
     mass_solve_parser = subparsers.add_parser('mass')
     
     ref_solve_parser.add_argument('im_folder', help='folder of images to solve')
-    ref_solve_parser.add_argument('-threads', help='number of threads')
+    ref_solve_parser.add_argument('-threads', type=int, help='number of threads')
     ref_solve_parser.add_argument('-sterile', action='store_true')
     
     mass_solve_parser.add_argument('im_folder', help='folder of images to solve')
@@ -105,16 +105,18 @@ def main(args):
             date = image[0].header['DATE-OBS']
             dt = sidereal.parseDatetime(date)
             st = SidTime(sidereal.SiderealTime.fromDatetime(dt).lst(-2.05393104))
-            #full_arg = solve_arg.format(ra=sidereal, file=path, new_file='wcs-'+filename)
-            full_arg = solve_arg.format(file=path, new_file=wcs_folder+st.rounded_str()+'.fit')
-            print(full_arg) 
-            
-            while len(processes) >= args.threads:
-                processes = [p for p in processes if not p.poll()]
-                time.sleep(1)
-            if not args.sterile:
-                p = subprocess.Popen([full_arg], shell=True)
-                processes.append(p)
+            wcs_path = wcs_folder+st.rounded_str()+'.fit'
+            if not os.path.isfile(wcs_path):
+                #full_arg = solve_arg.format(ra=sidereal, file=path, new_file='wcs-'+filename)
+                full_arg = solve_arg.format(file=path, new_file=wcs_path)
+                print(full_arg) 
+                print(processes) 
+                while len(processes) >= args.threads:
+                    processes = [p for p in processes if p.poll() == None]
+                    time.sleep(1)
+                if not args.sterile:
+                    p = subprocess.Popen([full_arg], shell=True)
+                    processes.append(p)
     for p in processes:
         p.wait()
 
