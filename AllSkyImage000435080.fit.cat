@@ -1,0 +1,17 @@
+#   1 NUMBER                 Running object number                                     
+#   2 MAG_AUTO               Kron-like elliptical aperture magnitude                    [mag]
+#   3 X_IMAGE                Object position along x                                    [pixel]
+#   4 Y_IMAGE                Object position along y                                    [pixel]
+#   5 X_WORLD                Barycenter position along world x axis                     [deg]
+#   6 Y_WORLD                Barycenter position along world y axis                     [deg]
+#   7 A_WORLD                Profile RMS along major axis (world units)                 [deg]
+#   8 B_WORLD                Profile RMS along minor axis (world units)                 [deg]
+#   9 THETA_WORLD            Position angle (CCW/world-x)                               [deg]
+#  10 FWHM_WORLD             FWHM assuming a gaussian core                              [deg]
+#  11 ELONGATION             A_IMAGE/B_IMAGE                                           
+#  12 ELLIPTICITY            1 - B_IMAGE/A_IMAGE                                       
+         1 -11.7466      3.5864     22.2088   1.2654560046e+02   6.9990166180e+01    0.3957846    0.2159422  85.69  0.001955837    2.995    0.666
+         2 -12.0022      3.7618      3.3241   1.2033092868e+02   7.3838099152e+01    0.4403063    0.2903169  14.35  0.002964181    1.787    0.440
+         3 -15.6026      5.5490    143.0904   1.4068607358e+02   4.3329749395e+01     7.543469     1.095843 -80.38   0.02380479    6.363    0.843
+         4 -16.1667     26.3914    236.8810   1.4105633112e+02   2.4726802494e+01     14.78396          nan  35.12   0.05371201    6.793    0.853
+         5 -11.1073     67.9481    143.6405   1.2572171850e+02   3.7442611589e+01    0.5939975    0.3053166  60.50  0.002804555    2.309    0.567

@@ -1,0 +1,19 @@
+#   1 NUMBER                 Running object number                                     
+#   2 MAG_AUTO               Kron-like elliptical aperture magnitude                    [mag]
+#   3 X_IMAGE                Object position along x                                    [pixel]
+#   4 Y_IMAGE                Object position along y                                    [pixel]
+#   5 X_WORLD                Barycenter position along world x axis                     [deg]
+#   6 Y_WORLD                Barycenter position along world y axis                     [deg]
+#   7 A_WORLD                Profile RMS along major axis (world units)                 [deg]
+#   8 B_WORLD                Profile RMS along minor axis (world units)                 [deg]
+#   9 THETA_WORLD            Position angle (CCW/world-x)                               [deg]
+#  10 FWHM_WORLD             FWHM assuming a gaussian core                              [deg]
+#  11 ELONGATION             A_IMAGE/B_IMAGE                                           
+#  12 ELLIPTICITY            1 - B_IMAGE/A_IMAGE                                       
+         1 -10.1217     12.6734      8.6630   5.3098992841e+01   7.5562861358e+01    0.1290616   0.07710876 -17.80  0.000705166    1.724    0.420
+         2 -11.4896    248.5418    248.3397   4.3714065006e+01  -8.5428352055e+00    0.2282386    0.1709062  14.14  0.001843978    1.288    0.223
+         3 -16.3703     11.5347    177.7997   8.6215178046e+01   3.5372541960e+01     14.13715     2.291303 -81.96   0.03743161    6.937    0.856
+         4 -11.4751    248.5513    118.5835   2.0619355857e+01   8.5654645336e+00    0.3524997    0.2132941   6.99  0.001589323    3.133    0.681
+         5 -10.4986    250.0000    106.9875   1.8029960895e+01   1.0040655108e+01    0.2178258   0.05956317 -35.64  0.000808808    2.987    0.665
+         6 -12.0320     87.6279    248.9195   7.4065363350e+01   1.1807110240e+01    0.4998333    0.1451333  45.12  0.002122795    2.736    0.635
+         7 -12.3068     87.7671    213.9106   7.0659764545e+01   1.8308660466e+01     0.242876    0.2216126  65.24 0.0004104492    1.119    0.106
